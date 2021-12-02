@@ -1,9 +1,12 @@
+import { ClienteModelo } from "./cliente.model";
+import { EncomiendaModelo } from "./encomienda.model";
+
 export class ServicioModelo{
     id?: String;
     fecha?: String;
     hora?: string;
     valor?: number;
-    origen?: string;
-    destino?: string;
-    encomienda?: string;
+    origen?: ClienteModelo;
+    destino?: ClienteModelo;
+    encomienda?: EncomiendaModelo;
 }

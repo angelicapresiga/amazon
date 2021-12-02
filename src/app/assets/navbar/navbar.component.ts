@@ -11,6 +11,7 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private seguridadService: SeguridadService) { }
+  
   activeSession?:boolean = false;
   subs: Subscription = new Subscription();
   

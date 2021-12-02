@@ -1,14 +1,16 @@
 <nav>
-    <div class="nav-wrapper purple"> 
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down purple lighten-1">
-        <li><a routerLink="/admin/get">Usuarios</a></li>
-        <li><a routerLink="/encomiendas/get">Encomiendas</a></li>
-        <li><a routerLink="/clientes/get">Clientes</a></li>
-        <li><a routerLink="/servicios/get">Servicios</a></li>
-        <!-- Sesion -->
-        <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
-       <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper purple"> 
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down purple lighten-1">
+      <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
+      <li *ngIf="activeSession"><a routerLink="/encomiendas/get">Encomiendas</a></li>
+      <li *ngIf="activeSession"><a routerLink="/clientes/get">Clientes</a></li>
+      <li *ngIf="activeSession"><a routerLink="/servicios/get">Servicios</a></li>
+      <!-- Sesion -->
+      <!-- Sesion -->
+      <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+      <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrarme</a></li>
+      <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
+    </ul>
+  </div>
+</nav>

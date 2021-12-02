@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       (data: any) => {
         this.seguridadService.almacenarSesion(data)
         Swal.fire({
-          position: 'top-end',
+          //position: 'top-end',
           icon: 'success',
           title: 'Bienvenido',
           showConfirmButton: false,

@@ -14,7 +14,15 @@ const routes: Routes = [
   },{
     path: '',
     redirectTo: 'login'
-  }
+  },
+  /* {
+    path: 'recuperar',
+    component: RecuperarClaveComponent,
+  },
+  {
+    path: 'change-password',
+    component: CambiarClaveComponent,
+  } */
 
 
 ];

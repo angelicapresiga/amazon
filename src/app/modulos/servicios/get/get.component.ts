@@ -14,6 +14,7 @@ export class GetComponent implements OnInit {
   listado: ServicioModelo[] = []
 
   ngOnInit(): void {
+    this.getAll()
   }
 
   getAll(){

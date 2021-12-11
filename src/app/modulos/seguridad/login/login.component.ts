@@ -39,7 +39,16 @@ export class LoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         }).then(() =>{
-          this.router.navigate(['/index']);
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Bienvenido',
+            showConfirmButton: false,
+            timer: 1500
+          }).then(() =>{
+            this.router.navigate(['/index']);
+          })
+
         })
 
       },

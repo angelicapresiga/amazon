@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as cryptoJS from 'crypto-js';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { UsuarioModelo } from '../modelos/usuario.model';

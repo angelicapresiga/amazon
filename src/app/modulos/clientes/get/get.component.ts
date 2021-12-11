@@ -11,13 +11,14 @@ import Swal from 'sweetalert2'
 export class GetComponent implements OnInit {
 
   constructor(private clienteService: ClienteService) { }
+  
   listado: ClienteModelo[] = []
 
   ngOnInit(): void {
     this.getAll()
   }
 
-  getAll(){
+   getAll(){
     this.clienteService.getAll().subscribe((data: ClienteModelo[]) => {
       this.listado = data
       console.log(data)

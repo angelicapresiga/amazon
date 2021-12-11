@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { EncomiendaModelo } from 'src/app/modelos/encomienda.model';
 import { EncomiendaService } from 'src/app/servicios/encomienda.service';
 import Swal from 'sweetalert2'
+import { EncomiendasModule } from '../encomiendas.module';
 
 @Component({
   selector: 'app-create',
@@ -16,12 +17,12 @@ export class CreateComponent implements OnInit {
     private encomiendaService: EncomiendaService,
     private router: Router) { }
 
-    fgValidacion = this.fb.group({
-      descripcion: ['', [Validators.required]],
-      peso: ['', [Validators.required]],
-      tipo: ['', [Validators.required]],
-      presentacion: ['', [Validators.required]],
-    });
+  fgValidacion = this.fb.group({
+    descripcion: ['', [Validators.required]],
+    peso: ['', [Validators.required]],
+    tipo: ['', [Validators.required]],
+    presentacion: ['', [Validators.required]],
+  });
   
   ngOnInit(): void {
   }
@@ -32,10 +33,11 @@ export class CreateComponent implements OnInit {
     encomienda.presentacion = this.fgValidacion.controls["presentacion"].value;
     encomienda.tipo = this.fgValidacion.controls["tipo"].value;
     
-    this.encomiendaService.store(encomienda).subscribe((data: EncomiendaModelo)=> {
+    this.encomiendaService.store(encomienda).subscribe((data: EncomiendasModule)=> {
       Swal.fire('Creado correctamente!', '', 'success')
-      this.router.navigate(['/encomienda/get']);
+      this.router.navigate(['/encomiendas/get']);
     },
+
     (error: any) => {
       console.log(error)
       alert("Error en el envio");

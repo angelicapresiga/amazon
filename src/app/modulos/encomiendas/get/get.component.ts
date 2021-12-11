@@ -19,8 +19,7 @@ export class GetComponent implements OnInit {
   }
   
   getAll(){
-    this.
-    encomiendaService.getAll().subscribe((data: EncomiendaModelo[]) => {
+    this.encomiendaService.getAll().subscribe((data: EncomiendaModelo[]) => {
       this.listado = data
       console.log(data)
     })

@@ -3,13 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { GetComponent } from './get/get.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent,
   },{
-    path: 'edit',
+    path: 'edit/:id',
     component: EditComponent,
   },{
     path: 'get',
@@ -22,7 +23,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule
+],
   exports: [RouterModule]
 })
 export class ClientesRoutingModule { }

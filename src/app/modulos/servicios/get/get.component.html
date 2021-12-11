@@ -1,6 +1,6 @@
 <div class="container">
     <br>
-    <a routerLink="/admin/create" class="btn">Registrar Servicio</a>
+    <a routerLink="/servicios/create" class="btn">Registrar Servicio</a>
    
     <table class="table responsive">
       <thead>
@@ -24,9 +24,7 @@
           <td>{{p.destino}}</td>
           <td>{{p.encomienda}}</td>
           <td>
-          <td>
-          <td>
-            <a routerLink="/admin/edit/{{p.id}}" class="btn">Editar</a>
+            <a routerLink="/servicios/edit/{{p.id}}" class="btn">Editar</a>
             <button class="btn red" (click)="delete(p.id)">Eliminar</button>
           </td>
         </tr>

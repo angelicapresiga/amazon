@@ -38,12 +38,12 @@ export class CreateComponent implements OnInit {
     cliente.ciudad = this.fgValidacion.controls["ciudad"].value;
     cliente.departamento = this.fgValidacion.controls["departamento"].value;
     cliente.direccion=this.fgValidacion.controls["direccion"].value;
-    cliente.email = this.fgValidacion.controls["correo"].value;
+    cliente.email = this.fgValidacion.controls["email"].value;
     cliente.telefono = this.fgValidacion.controls["telefono"].value;
- 
+
     this.clienteService.store(cliente).subscribe((data: ClienteModelo)=> {
       Swal.fire('Creado correctamente!', '', 'success')
-      this.router.navigate(['/cliente/get']);
+      this.router.navigate(['/get']);
     },
     (error: any) => {
       console.log(error)

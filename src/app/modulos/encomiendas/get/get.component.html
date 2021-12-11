@@ -1,6 +1,6 @@
 <div class="container">
     <br>
-    <a routerLink="/admin/create" class="btn">Registrar Encomienda</a>
+    <a routerLink="/encomiendas/create" class="btn">Registrar Encomienda</a>
    
     <table class="table responsive">
       <thead>
@@ -20,7 +20,7 @@
           <td>{{p.tipo}}</td>
           <td>{{p.presentacion}}</td>
           <td>
-            <a routerLink="/encomienda/edit/{{p.id}}" class="btn">Editar</a>
+            <a routerLink="/encomiendas/edit/{{p.id}}" class="btn">Editar</a>
             <button class="btn red" (click)="delete(p.id)">Eliminar</button>
           </td>
         </tr>

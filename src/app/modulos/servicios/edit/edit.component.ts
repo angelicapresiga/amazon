@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServicioModelo } from 'src/app/modelos/servicio.model';
+import { ClienteModelo } from 'src/app/modelos/cliente.model';
+import { EncomiendaModelo } from 'src/app/modelos/encomienda.model';
 import { ServicioService } from 'src/app/servicios/servicio.service';
+import { ClienteService } from 'src/app/servicios/cliente.service';
+import { EncomiendaService } from 'src/app/servicios/encomienda.service';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -15,9 +19,14 @@ export class EditComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private servicioService: ServicioService,
     private router: Router,
-    private route: ActivatedRoute) { }
-
-   fgValidacion = this.fb.group({
+    private route: ActivatedRoute,
+    private clienteService: ClienteService,
+    private encomiendaService: EncomiendaService) { }
+  
+    listadoClientes: ClienteModelo[] = []
+    listadoEncomienda: EncomiendaModelo[] = []
+  
+    fgValidacion = this.fb.group({
     id: ['', [Validators.required]],
     fecha: ['', [Validators.required]],
     hora: ['', [Validators.required]],
@@ -32,6 +41,8 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"]
     this.buscarRegistro(this.id);
+    this.getAllCliente();
+    this.getAllEncomienda();
   }
 //buscar servicio
 buscarRegistro(id: string){
@@ -64,6 +75,17 @@ buscarRegistro(id: string){
       alert("Error en el envio");
     })
   }
-   
+  getAllCliente(){
+    this.clienteService.getAll().subscribe((data: ClienteModelo[]) => {
+      this.listadoClientes = data
+      console.log(data)
+    })
+  }
+  getAllEncomienda(){
+    this.encomiendaService.getAll().subscribe((data: EncomiendaModelo[]) => {
+      this.listadoEncomienda = data
+      console.log(data)
+    })
+  } 
  
 }

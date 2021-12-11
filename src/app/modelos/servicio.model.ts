@@ -4,9 +4,9 @@ import { EncomiendaModelo } from "./encomienda.model";
 export class ServicioModelo{
     id?: String;
     fecha?: String;
-    hora?: string;
+    hora?: String;
     valor?: number;
-    origen?: ClienteModelo;
-    destino?: ClienteModelo;
-    encomienda?: EncomiendaModelo;
+    origen?: String;
+    destino?: String;
+    encomienda?: String;
 }

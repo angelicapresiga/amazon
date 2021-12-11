@@ -51,7 +51,7 @@ export class CreateComponent implements OnInit {
        
       this.servicioService.store(servicio).subscribe((data: ServicioModelo)=> {
         Swal.fire('Creado correctamente!', '', 'success')
-        this.router.navigate(['/servicio/get']);
+        this.router.navigate(['/servicios/get']);
       },
       (error: any) => {
         console.log(error)
@@ -70,5 +70,5 @@ export class CreateComponent implements OnInit {
         console.log(data)
       })
     }
-
+ 
   }

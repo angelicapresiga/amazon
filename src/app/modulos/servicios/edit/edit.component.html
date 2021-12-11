@@ -1,5 +1,5 @@
 <div class="container">
-    <h3 class="center-align">Editar Usuario</h3>
+    <h3 class="center-align">Editar Servicio</h3>
    
     <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="edit()">
       <input formControlName="id" type="hidden" class="validate">
@@ -19,17 +19,23 @@
       </div>
       <div class="row">
         <div class="input-field col s4">
-          <input formControlName="origen" type="text" class="validate">
-          <label for="origen">Origen</label>
+          <select class="browser-default" formControlName="origen" >
+            <option value="" disabled selected>Seleccione el origen</option>
+            <option *ngFor="let origen of listadoClientes" value="{{origen.nombre}} - {{origen.apellidos}}">{{origen.nombre}} - {{origen.apellidos}}</option>
+          </select>
         </div>
         <div class="input-field col s4">
-          <input formControlName="destino" type="text" class="validate">
-          <label for="destino">Destino</label>
+          <select class="browser-default" formControlName="destino" >
+            <option value="" disabled selected>Seleccione el destino</option>
+            <option *ngFor="let destino of listadoClientes" value="{{destino.nombre}} - {{destino.apellidos}}">{{destino.nombre}} - {{destino.apellidos}}</option>
+          </select>
         </div>
         <div class="input-field col s4">
-            <input formControlName="encomienda" type="text" class="validate">
-            <label for="encomienda">Encomienda</label>
-          </div>
+          <select class="browser-default" formControlName="encomienda" >
+            <option value="" disabled selected>Seleccione tipo encomienda</option>
+            <option *ngFor="let encomienda of listadoEncomienda" value="{{encomienda.tipo}}">{{encomienda.tipo}}</option>
+          </select>
+        </div>
       </div>
 
       <div class="row center-align">
